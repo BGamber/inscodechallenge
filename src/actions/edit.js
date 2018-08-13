@@ -24,7 +24,7 @@ export let updateInputReducer = (state, action) => {
     newState.contactNameInputValue = "";
     newState.contactPhoneInputValue = "";
     newState.contactEmailInputValue = "";
-    newState.performanceInputValue = "";
+    newState.performanceInputValue = "Strong";
   } else {
     newState[action.key] = action.value;
   }
@@ -50,7 +50,7 @@ export let deleteEntryReducer = (state, action) => {
     newState.contactNameInputValue = "";
     newState.contactPhoneInputValue = "";
     newState.contactEmailInputValue = "";
-    newState.performanceInputValue = "";
+    newState.performanceInputValue = "Strong";
   }
   return newState;
 };
