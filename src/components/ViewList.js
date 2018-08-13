@@ -4,6 +4,9 @@ import BackToMenuBtn from "./BackToMenuBtn";
 import "../styles/ViewList.css";
 
 import { updateSearch, updateFilter } from "../actions/fetch";
+import { updateInput } from "../actions/edit";
+
+import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 
@@ -14,24 +17,35 @@ let ViewList = ({
   resetSearch,
   filter,
   changeFilter,
-  resetFilter
+  resetFilter,
+  targetEdit
 }) => (
   <div className="view-list">
     <Header content="View Targets" />
-    <BackToMenuBtn />
+    {/* <BackToMenuBtn /> */}
     <label>
-      Search:
+      Search Name:
       <input value={companySearch} onChange={event => searchCompany(event)} />
       <button onClick={() => resetSearch()}>Reset</button>
     </label>
     <label>
-      Filter:
+      Filter Status:
       <select value={filter} onChange={event => changeFilter(event)}>
         <option value="All">All</option>
         <option value="Researching">Researching</option>
         <option value="Pending">Pending</option>
         <option value="Approved">Approved</option>
         <option value="Declined">Declined</option>
+      </select>
+      <button onClick={() => resetFilter()}>Reset</button>
+    </label>
+    <label>
+      Filter Performance:
+      <select value={filter} onChange={event => changeFilter(event)}>
+        <option value="All">All</option>
+        <option value="Researching">Strong</option>
+        <option value="Pending">Good</option>
+        <option value="Approved">Weak</option>
       </select>
       <button onClick={() => resetFilter()}>Reset</button>
     </label>
@@ -45,8 +59,9 @@ let ViewList = ({
             <div
               key={"list-" + company.name}
               className={"col-name-item" + (index % 2 === 0 ? " even" : " odd")}
+              onClick={() => targetEdit(company.name)}
             >
-              {company.name}
+              <Link to="/edit">{company.name}</Link>
             </div>
           ))}
       </div>
@@ -123,7 +138,11 @@ let mapDispatchToProps = dispatch => {
     },
     resetFilter: () => {
       dispatch(updateFilter("All"));
-    }
+    },
+    targetEdit: (target) => {
+      dispatch(updateInput("companyEditSelect", target));
+
+    },
   };
 };
 

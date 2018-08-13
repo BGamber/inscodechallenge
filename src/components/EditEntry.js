@@ -107,7 +107,7 @@ let EditEntry = ({
           return (
             <Link
               className="submit-button"
-              to="/view"
+              to="/"
               onClick={() => submitTarget()}
             >
               Submit Change
@@ -120,7 +120,7 @@ let EditEntry = ({
           return (
             <Link
               className="delete-button"
-              to="/view"
+              to="/"
               onClick={() => deleteTarget()}
             >
               Delete Target
