@@ -66,7 +66,7 @@ let initialState = {
   contactNameInputValue: '',
   contactPhoneInputValue: '',
   contactEmailInputValue: '',
-  performanceInputValue: ''
+  performanceInputValue: 'Strong'
 };
 
 let reducers = {

@@ -16,9 +16,9 @@ let App = () => (
   <div className="app">
     <Router className="test">
       <Switch>
+        {/* <Route exact path="/" component={(props) =>
+          <MainMenu {...props} />} /> */}
         <Route exact path="/" component={(props) =>
-          <MainMenu {...props} />} />
-        <Route path="/view" component={(props) =>
           <ViewList {...props} />} />
         <Route path="/edit" component={(props) => 
           <EditEntry {...props} />} />
