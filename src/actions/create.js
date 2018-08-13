@@ -21,7 +21,7 @@ export let createEntryReducer = state => {
     contactNameInputValue: "",
     contactPhoneInputValue: "",
     contactEmailInputValue: "",
-    performanceInputValue: "",
+    performanceInputValue: "Strong",
     companyList: [newEntry, ...state.companyList.filter(company => company.name !== state.nameInputValue)]
   };
   return newState;
