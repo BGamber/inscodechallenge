@@ -1,0 +1,7 @@
+.menu-header {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  font-size: 1.5em;
+}

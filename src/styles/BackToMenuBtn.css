@@ -1,0 +1,26 @@
+.to-menu-btn {
+  padding: 0.2em;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  border-top: 2px solid gray;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid gray;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.to-menu-btn:active {
+  padding: 0.3em 0.1em 0.1em 0.3em;
+  background-color: blanchedalmond;
+  border-top: 2px solid black;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid black;
+}
