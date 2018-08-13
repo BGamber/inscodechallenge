@@ -66,6 +66,38 @@ let ViewList = ({
             </div>
           ))}
       </div>
+      <div className="column-performance">
+        <div className="col-performance-header">Performance</div>
+        {companyList
+          .filter(company => company.name.indexOf(companySearch) !== -1)
+          .filter(company => company.status.indexOf(filter) !== -1)
+          .map((company, index) => (
+            <div
+              key={"list-" + company.name}
+              className={
+                "col-performance-item" + (index % 2 === 0 ? " even" : " odd")
+              }
+            >
+              {company.performance}
+            </div>
+          ))}
+      </div>
+      <div className="column-contact">
+        <div className="col-contact-header">Contact</div>
+        {companyList
+          .filter(company => company.name.indexOf(companySearch) !== -1)
+          .filter(company => company.status.indexOf(filter) !== -1)
+          .map((company, index) => (
+            <div
+              key={"list-" + company.name}
+              className={
+                "col-contact-item" + (index % 2 === 0 ? " even" : " odd")
+              }
+            >
+              {company.contact.name}
+            </div>
+          ))}
+      </div>
     </div>
   </div>
 );
